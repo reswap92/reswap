@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>FILE CRIPTATO</title>
+<style>
+body {
+  background:black;
+  color:#00ff99;
+  font-family:monospace;
+  padding:40px;
+}
+#warning { color:red; font-weight:bold; }
+</style>
+</head>
+<body>
+
+<h2>🔒 FILE CRIPTATO – ACCESSO AUTORIZZATO</h2>
+<p id="warning">⚠️ Autodistruzione tra 30 secondi</p>
+
+<pre id="secret">
+[ACCESSO CONCESSO]
+
+Protocollo X-17 attivo.
+Documento classificato.
+Copia non consentita.
+Diffusione vietata.
+Sistema monitorato.
+Timer avviato.
+30...
+</pre>
+
+<script>
+let t = 30;
+const box = document.getElementById("secret");
+
+const timer = setInterval(() => {
+  t--;
+  box.textContent = box.textContent.replace(/\d+\.\.\./, t + "...");
+  if (t <= 0) {
+    clearInterval(timer);
+    document.body.innerHTML =
+      "<h1 style='color:red'>💥 FILE AUTODISTRUTTO</h1>";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
